@@ -1,0 +1,25 @@
+.navbar{
+    margin-bottom: 20px;
+}
+h1{
+    color: white;
+    margin: 0 auto;
+}
+.searchArea{
+    margin-left: 30px;
+}
+#show{
+    background-color: white;
+    color: black;
+}
+.card{
+    border-radius: 10px;
+    background-color: #007bff;
+    color: white;
+}
+ul{
+    border-color: gray;
+    border-width: .5px;
+    border-style: solid;
+    border-radius: 2px;
+}

@@ -10,8 +10,8 @@ $(document).ready(function () {
         `
     }
     function showUV(data) {
-        var lat = data.coord.lat;
-        var lon = data.coord.lon;
+        let lat = data.coord.lat;
+        let lon = data.coord.lon;
         console.log(uvDisplay);
         return `
         <p><strong>UV Index:</strong>:${data.value}</p>
@@ -20,33 +20,33 @@ $(document).ready(function () {
 
     function displayCities(cityList) {
         $('.city-list').empty();
-        var list = localStorage.getItem("cityList");
+        let list = localStorage.getItem("cityList");
         cityList = (JSON.parse(list));
         // returning as a string, find javascript function to parse cityList
         if (list) {
-            for (var i = 0; i < cityList.length; i++) {
-                var container = $("<div class=card></div>").text(cityList[i]);
+            for (let i = 0; i < cityList.length; i++) {
+                let container = $("<div class=card></div>").text(cityList[i]);
                 $('.city-list').prepend(container);
             }
         }
     }
 
     function showForecast(data) {
-        var forecast = data.list; // [{},{},{}]
+        let forecast = data.list; // [{},{},{}]
         // We have an array of 40 objects
         // We want every 5th object's date, icon, temp, humidity (index 4)
         // Display date, icon, temp and humidity via html
         // LOGIC:
         // Loop over array
-        var currentForecast = [];
-        for (var i = 0; i < forecast.length; i++) {
+        let currentForecast = [];
+        for (let i = 0; i < forecast.length; i++) {
 
-            var currentObject = forecast[i];
+            let currentObject = forecast[i];
             // First time through loop - 0: {}
             // Second time through loop - 1: {}
             // Third time through loop - 2: {}
 
-            var dt_time = currentObject.dt_txt.split(' ')[1] // '12:00:00'[1 is the number of index]
+            let dt_time = currentObject.dt_txt.split(' ')[1] // '12:00:00'[1 is the number of index]
             // At each index..If...dt_txt === "12:00:00" get info
             if (dt_time === "12:00:00") {
                 // currentObject.main ... time, icon, temp, humidity
@@ -79,7 +79,7 @@ $(document).ready(function () {
 
     // METHODS
 
-    var stored = localStorage.getItem("cityList")
+    let stored = localStorage.getItem("cityList")
     if (stored) {
         cityList = JSON.parse(stored)
     } else {
@@ -88,7 +88,7 @@ $(document).ready(function () {
     //var cityList = [];
     $('#submitCity').click(function (event) {
         event.preventDefault();
-        var city = $('#city').val();
+        let city = $('#city').val();
         // push city to cityList array
         cityList.push(city);
         // set cityList in localStorage (remember to use stringify!)
@@ -101,7 +101,7 @@ $(document).ready(function () {
                 url: 'https://api.openweathermap.org/data/2.5/weather?q=' + city + "&units=imperial" + "&APPID=5650ba04d76cc8ddc64d65a07cda4c4a",
                 type: "GET",
                 success: function (data) {
-                    var display = show(data);
+                    let display = show(data);
                     $("#show").html(display);
                 }
             });
@@ -119,7 +119,7 @@ $(document).ready(function () {
                 url: 'https://api.openweathermap.org/data/2.5/uvi?appid=' + "&APPID=5650ba04d76cc8ddc64d65a07cda4c4a" + "&lat=" + lat + "&lon=" + lon,
                 type: "GET",
                 sucess: function (data) {
-                    var uvDisplay = showUV(data);
+                    let uvDisplay = showUV(data);
                     console.log(uvDisplay, "uvDisplay");
                 }
             });
@@ -132,3 +132,5 @@ $(document).ready(function () {
     displayCities(cityList);
 
 });
+
+

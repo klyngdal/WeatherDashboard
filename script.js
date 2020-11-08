@@ -32,7 +32,7 @@ $(document).ready(function () {
     }
 
     function showForecast(data) {
-        let forecast = data.list; // [{},{},{}]
+       let forecast = data.list; // [{},{},{}]
         // We have an array of 40 objects
         // We want every 5th object's date, icon, temp, humidity (index 4)
         // Display date, icon, temp and humidity via html
@@ -50,13 +50,13 @@ $(document).ready(function () {
             // At each index..If...dt_txt === "12:00:00" get info
             if (dt_time === "12:00:00") {
                 // currentObject.main ... time, icon, temp, humidity
-                var main = currentObject.main;
+                let main = currentObject.main;
                 // Store each of these in variables
-                var temp = main.temp; // TODO: Convert to F
-                var humidity = main.humidity;
-                var date = moment(currentObject.dt_txt).format('l'); // TODO: Use MomentJS to convert
-                var icon = currentObject.weather[0].icon;
-                var iconurl = "https://openweathermap.org/img/w/" + icon + ".png";
+                let temp = main.temp; // TODO: Convert to F
+                let humidity = main.humidity;
+                let date = moment(currentObject.dt_txt).format('l'); // TODO: Use MomentJS to convert
+                let icon = currentObject.weather[0].icon;
+                let iconurl = "https://openweathermap.org/img/w/" + icon + ".png";
 
                 let htmlTemplate = `
             <div class="col-sm currentCondition">
@@ -110,7 +110,7 @@ $(document).ready(function () {
                 url: 'https://api.openweathermap.org/data/2.5/forecast?q=' + city + "&units=imperial" + "&APPID=5650ba04d76cc8ddc64d65a07cda4c4a",
                 type: "GET",
                 success: function (data) {
-                    var forecastDisplay = showForecast(data)
+                    let forecastDisplay = showForecast(data)
                     // add to page
                 }
             });

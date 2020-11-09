@@ -1,4 +1,5 @@
 # WeatherDashboard
+
 You will be employer-competitive if you are able to:
 
 Explain the difference between a client-side and server-side API
@@ -8,3 +9,4 @@ Parse JSON to dynamically generate HTML
 Explain the benefits and challenges of working with asynchronous JavaScript
 Explain and execute callbacks to handle asynchronous HTTP requests
 
+<img src= "screenshot.png">

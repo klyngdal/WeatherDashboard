@@ -1,36 +1,39 @@
-.navbar{
-    margin-bottom: 20px;
+.navbar {
+  margin-bottom: 20px;
+  background-color:  rgba(40, 38, 38, 0.789);
 }
-h1{
-    color: white;
-    margin: 0 auto;
+h1 {
+  color: white;
+  margin: 0 auto;
 }
-.searchArea{
-    margin-left: 30px;
+.searchArea {
+  margin-left: 30px;
+ 
 }
-#show{
-    background-color: white;
-    color: black;
+#show {
+  background-color:  rgba(40, 38, 38, 0.789);
+  color: white;
+  
 }
-.card{
-    border-radius: 10px;
-    background-color: #4774a5;
-    color: white;
-    text-align: center;
-}
-ul{
-    border-color: gray;
-    border-width: .5px;
-    border-style: solid;
-    border-radius: 2px;
+.card {
+  border-radius: 10px;
+  background-color: rgba(40, 38, 38, 0.789);
+  color: rgb(248, 247, 247);
+  text-align: center;
+  font-size: medium;
+  font-weight: bold;
+  margin-right: 2px;
 }
 
-body{
-    min-height: 100vh;
-    
-    background-image: url("joonas-sild-CwnDbpkSdYI-unsplash.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-color: white;
-    display: block;
+
+body {
+  min-height: 100vh;
+  background-image: url("gabriele-diwald-Kwi60PbAM9I-unsplash.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: block;
+}
+.btn {
+ background-color: rgba(40, 38, 38, 0.789);
+ color: white;
 }

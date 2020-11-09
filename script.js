@@ -30,9 +30,10 @@ $(document).ready(function () {
             }
         }
     }
+   
 
     function showForecast(data) {
-       let forecast = data.list; // [{},{},{}]
+       let forecast = data.list; 
         // We have an array of 40 objects
         // We want every 5th object's date, icon, temp, humidity (index 4)
         // Display date, icon, temp and humidity via html
@@ -51,10 +52,10 @@ $(document).ready(function () {
             if (dt_time === "12:00:00") {
                 // currentObject.main ... time, icon, temp, humidity
                 let main = currentObject.main;
-                // Store each of these in variables
-                let temp = main.temp; // TODO: Convert to F
+                
+                let temp = main.temp; //Convert to F
                 let humidity = main.humidity;
-                let date = moment(currentObject.dt_txt).format('l'); // TODO: Use MomentJS to convert
+                let date = moment(currentObject.dt_txt).format('l'); // Use MomentJS to convert
                 let icon = currentObject.weather[0].icon;
                 let iconurl = "https://openweathermap.org/img/w/" + icon + ".png";
 
@@ -77,7 +78,7 @@ $(document).ready(function () {
 
     }
 
-    // METHODS
+    // METHOD
 
     let stored = localStorage.getItem("cityList")
     if (stored) {
@@ -132,5 +133,6 @@ $(document).ready(function () {
     displayCities(cityList);
 
 });
+
 
 

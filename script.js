@@ -22,7 +22,7 @@ $(document).ready(function () {
         $('.city-list').empty();
         let list = localStorage.getItem("cityList");
         cityList = (JSON.parse(list));
-        // returning as a string, find javascript function to parse cityList
+        
         if (list) {
             for (let i = 0; i < cityList.length; i++) {
                 let container = $("<div class=card></div>").text(cityList[i]);
@@ -34,21 +34,18 @@ $(document).ready(function () {
 
     function showForecast(data) {
        let forecast = data.list; 
-        // We have an array of 40 objects
+        
         // We want every 5th object's date, icon, temp, humidity (index 4)
         // Display date, icon, temp and humidity via html
-        // LOGIC:
-        // Loop over array
         let currentForecast = [];
         for (let i = 0; i < forecast.length; i++) {
 
             let currentObject = forecast[i];
             // First time through loop - 0: {}
-            // Second time through loop - 1: {}
-            // Third time through loop - 2: {}
-
-            let dt_time = currentObject.dt_txt.split(' ')[1] // '12:00:00'[1 is the number of index]
-            // At each index..If...dt_txt === "12:00:00" get info
+            // Second time through loop - 1: {} 
+            //...
+            let dt_time = currentObject.dt_txt.split(' ')[1] 
+            
             if (dt_time === "12:00:00") {
                 // currentObject.main ... time, icon, temp, humidity
                 let main = currentObject.main;
@@ -86,13 +83,13 @@ $(document).ready(function () {
     } else {
         cityList = []
     }
-    //var cityList = [];
+    //let cityList = [];
     $('#submitCity').click(function (event) {
         event.preventDefault();
         let city = $('#city').val();
         // push city to cityList array
         cityList.push(city);
-        // set cityList in localStorage (remember to use stringify!)
+        // set cityList in localStorage 
         localStorage.setItem("cityList", JSON.stringify(cityList));
         // check length of array. if > 5 then don't add.
         displayCities(cityList);
